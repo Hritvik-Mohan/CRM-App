@@ -1,11 +1,24 @@
 import { Button, Container, FormControl, FormLabel, Input, Text, Wrap, WrapItem } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './CustomerForm.css'
+import { useNavigate } from 'react-router-dom';
 
 export default function CustomerForm() {
-  const [customer, setCustomer] = useState({})
+  const [customer, setCustomer] = useState({});
 
   function handleSubmit () {
+      // fetch("https://mycrmserver.netlify.app/api/customer", {
+      fetch("https://crm-api-deg3.onrender.com/api/customers", {
+        method: "POST",
+        body:JSON.stringify(customer),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then((res) => {
+        return res.json();
+      }).then((res) => {
+        console.log(res);
+      })
     console.log(customer)
   }
 

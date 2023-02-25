@@ -27,7 +27,7 @@ export default function CustomerList() {
   const [customers, setCustomers] = useState([]);
 
   useEffect(() => {
-    fetch("https://mycrmserver.netlify.app/api/customer")
+    fetch("https://crm-api-deg3.onrender.com/api/customers")
       .then((res) => {
         return res.json();
       })
@@ -35,6 +35,8 @@ export default function CustomerList() {
         setCustomers(res);
       })
   }, [])
+
+  console.log(customers)
   
 
   function isEmpty(CustomerData) {
