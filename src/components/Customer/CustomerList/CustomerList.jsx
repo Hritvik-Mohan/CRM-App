@@ -50,7 +50,7 @@ export default function CustomerList() {
 
   return (
     <div className='customer-list'>
-      <Container mt='6rem' maxW='100%'>
+      <Container mt='3rem' maxW='100%'>
         <WrapItem mb='2rem'>
           <Link to='/form'><Button colorScheme='linkedin' size='lg'>New Customer</Button></Link>
         </WrapItem>

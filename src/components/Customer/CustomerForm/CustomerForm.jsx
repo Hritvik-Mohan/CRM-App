@@ -25,7 +25,7 @@ export default function CustomerForm() {
   }
 
   return (
-    <Container mt='6rem' maxW='600px'>
+    <Container mt='3rem' maxW='600px'>
       <Text fontSize={"3rem"}>Register your company</Text>
       <FormControl>
         <FormLabel mt={2}>Name</FormLabel>
