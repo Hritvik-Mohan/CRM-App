@@ -51,7 +51,7 @@ export default function CustomerForm() {
         <FormLabel mt={2}>Established In</FormLabel>
         <Input type="number" onChange={(e) => {customer.year = e.target.value; setCustomer(customer);}} />
       </FormControl>
-      <Wrap justify="left">
+      <Wrap justify="left" mb='4rem'>
         <WrapItem>
           <Button
             mt={4}
