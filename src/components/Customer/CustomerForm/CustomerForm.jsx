@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function CustomerForm() {
   const [customer, setCustomer] = useState({});
+  const navigate = useNavigate();
 
   function handleSubmit () {
       // fetch("https://mycrmserver.netlify.app/api/customer", {
@@ -18,8 +19,9 @@ export default function CustomerForm() {
         return res.json();
       }).then((res) => {
         console.log(res);
+        navigate('/')
       })
-    console.log(customer)
+    // console.log(customer)
   }
 
   return (
@@ -47,7 +49,7 @@ export default function CustomerForm() {
       </FormControl>
       <FormControl>
         <FormLabel mt={2}>Established In</FormLabel>
-        <Input type="number" onChange={(e) => {customer.established = e.target.value; setCustomer(customer);}} />
+        <Input type="number" onChange={(e) => {customer.year = e.target.value; setCustomer(customer);}} />
       </FormControl>
       <Wrap justify="left">
         <WrapItem>
