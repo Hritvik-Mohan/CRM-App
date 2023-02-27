@@ -18,6 +18,8 @@ import {
   AlertDescription,
   Button,
   WrapItem,
+  Stack,
+  Spinner,
 } from '@chakra-ui/react'
 // import CustomerData from '/src/Customer.json'
 import { Link } from 'react-router-dom';
@@ -25,19 +27,22 @@ import { Link } from 'react-router-dom';
 export default function CustomerList() {
 
   const [customers, setCustomers] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     fetch("https://crm-api-deg3.onrender.com/api/customers")
       .then((res) => {
         return res.json();
       })
       .then((res) => {
         setCustomers(res);
+        setLoading(false)
       })
   }, [])
 
   console.log(customers)
-  
+
 
   function isEmpty(CustomerData) {
     return Object.keys(CustomerData).length === 0;
@@ -46,11 +51,11 @@ export default function CustomerList() {
   return (
     <div className='customer-list'>
       <Container mt='6rem' maxW='100%'>
-        <WrapItem>
-          <Link to='/form'><Button colorScheme='teal'>New Customer</Button></Link>
+        <WrapItem mb='2rem'>
+          <Link to='/form'><Button colorScheme='teal' size='lg'>New Customer</Button></Link>
         </WrapItem>
         <TableContainer>
-          <Table variant='simple'>
+          <Table variant='simple' fontSize='1.3rem'>
             {/* <TableCaption>Imperial to metric conversion factors</TableCaption> */}
             <Thead>
               <Tr>
@@ -62,6 +67,7 @@ export default function CustomerList() {
                 <Th>Established Year</Th>
               </Tr>
             </Thead>
+
             <Tbody>
               {
                 customers.map(customer => (
@@ -85,6 +91,9 @@ export default function CustomerList() {
                 </Tr>
               </Tfoot> */}
           </Table>
+          <WrapItem justifyContent='center' mt='10%'>
+            {loading && <Stack><Spinner size='xl' /></Stack>}
+          </WrapItem>
           {/* {isEmpty(CustomerData) &&
             <Alert status='error'>
               <AlertIcon />
