@@ -1,0 +1,14 @@
+.navbar-container {
+    background-color: #865DFF;
+}
+
+.navbar {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.navlink {
+    color: white;
+}
