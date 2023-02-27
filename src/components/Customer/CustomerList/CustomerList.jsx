@@ -52,19 +52,19 @@ export default function CustomerList() {
     <div className='customer-list'>
       <Container mt='6rem' maxW='100%'>
         <WrapItem mb='2rem'>
-          <Link to='/form'><Button colorScheme='teal' size='lg'>New Customer</Button></Link>
+          <Link to='/form'><Button colorScheme='linkedin' size='lg'>New Customer</Button></Link>
         </WrapItem>
-        <TableContainer>
+        <TableContainer mb='2rem'>
           <Table variant='simple' fontSize='1.3rem'>
             {/* <TableCaption>Imperial to metric conversion factors</TableCaption> */}
             <Thead>
               <Tr>
-                <Th>Name</Th>
-                <Th>Website</Th>
-                <Th isNumeric>Turnover</Th>
-                <Th isNumeric>Number of Employees</Th>
-                <Th>CEO</Th>
-                <Th>Established Year</Th>
+                <Th fontSize='1rem'>Name</Th>
+                <Th fontSize='1rem'>Website</Th>
+                <Th isNumeric fontSize='1rem'>Turnover</Th>
+                <Th isNumeric fontSize='1rem'>Number of Employees</Th>
+                <Th fontSize='1rem'>CEO</Th>
+                <Th fontSize='1rem'>Established Year</Th>
               </Tr>
             </Thead>
 
