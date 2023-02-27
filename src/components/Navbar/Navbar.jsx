@@ -6,7 +6,7 @@ import "./Navbar.css"
 export default function Navbar() {
     return (
         <div className='navbar-container'>
-            <Wrap className='navbar' p='1rem' fontSize='2rem' color='white'>
+            <Wrap className='navbar' p='0.8rem' fontSize='2rem' color='white'>
                 {/* <NavLink className="navlink" to={"/"}>Home</NavLink>
                 <NavLink className="navlink" to={"/form"}>New customer</NavLink> */}
                 <NavLink className="navlink" to={"/"}>CRM </NavLink>
